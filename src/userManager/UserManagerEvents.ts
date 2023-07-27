@@ -51,11 +51,17 @@ export class UserManagerEvents extends AccessTokenEvents {
     this._userUnloaded.raise();
   }
 
-  /** Add callback: Raised when a user session has been established (or re-established). */
+  /**
+   * Add callback: Raised when a user session has been established (or
+   * re-established).
+   */
   public addUserLoaded(cb: UserLoadedCallback): () => void {
     return this._userLoaded.addHandler(cb);
   }
-  /** Remove callback: Raised when a user session has been established (or re-established). */
+  /**
+   * Remove callback: Raised when a user session has been established (or
+   * re-established).
+   */
   public removeUserLoaded(cb: UserLoadedCallback): void {
     return this._userLoaded.removeHandler(cb);
   }
@@ -87,7 +93,10 @@ export class UserManagerEvents extends AccessTokenEvents {
   public addUserSignedOut(cb: UserSignedOutCallback): () => void {
     return this._userSignedOut.addHandler(cb);
   }
-  /** Remove callback: Raised when the user's sign-in status at the OP has changed. */
+  /**
+   * Remove callback: Raised when the user's sign-in status at the OP has
+   * changed.
+   */
   public removeUserSignedOut(cb: UserSignedOutCallback): void {
     this._userSignedOut.removeHandler(cb);
   }
@@ -97,11 +106,17 @@ export class UserManagerEvents extends AccessTokenEvents {
     this._userSignedOut.raise();
   }
 
-  /** Add callback: Raised when the user session changed (when `monitorSession` is set) */
+  /**
+   * Add callback: Raised when the user session changed (when `monitorSession`
+   * is set)
+   */
   public addUserSessionChanged(cb: UserSessionChangedCallback): () => void {
     return this._userSessionChanged.addHandler(cb);
   }
-  /** Remove callback: Raised when the user session changed (when `monitorSession` is set) */
+  /**
+   * Remove callback: Raised when the user session changed (when
+   * `monitorSession` is set)
+   */
   public removeUserSessionChanged(cb: UserSessionChangedCallback): void {
     this._userSessionChanged.removeHandler(cb);
   }

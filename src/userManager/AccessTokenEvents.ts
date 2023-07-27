@@ -29,7 +29,7 @@ export class AccessTokenEvents {
       const duration = container.expires_in;
       this._logger.debug(
         "load: access token present, remaining duration:",
-        duration
+        duration,
       );
 
       if (duration > 0) {
@@ -43,7 +43,7 @@ export class AccessTokenEvents {
         this._expiringTimer.init(expiring);
       } else {
         this._logger.debug(
-          "load: canceling existing expiring timer because we're past expiration."
+          "load: canceling existing expiring timer because we're past expiration.",
         );
         this._expiringTimer.cancel();
       }

@@ -114,7 +114,7 @@ export const createUserManagerContext = ({
         isLoaded,
         removeUser,
       }),
-      [userData, isLoaded, removeUser]
+      [userData, isLoaded, removeUser],
     );
 
     return <Context.Provider value={value}>{children}</Context.Provider>;

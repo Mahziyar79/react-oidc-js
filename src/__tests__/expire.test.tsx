@@ -60,29 +60,29 @@ describe("useAuth", () => {
     const component = render(
       <UserManagerContext.Provider>
         <TextInputTester />
-      </UserManagerContext.Provider>
+      </UserManagerContext.Provider>,
     );
 
     expect(
-      (await component.findByTestId("response")).getAttribute("data-userdata")
+      (await component.findByTestId("response")).getAttribute("data-userdata"),
     ).toBe(null);
 
     fireEvent.click(await component.findByTestId("response"));
     await act(() => sleep(500));
 
     const str = (await component.findByTestId("response")).getAttribute(
-      "data-userdata"
+      "data-userdata",
     );
     expect(str ? JSON.parse(str).refresh_token : null).toBe("refresh_token");
 
     expect((await UserManagerContext.getUser())?.refresh_token).toBe(
-      "refresh_token"
+      "refresh_token",
     );
 
     await act(() => sleep(12000));
 
     expect((await UserManagerContext.getUser())?.refresh_token).toBe(
-      "refresh_token2"
+      "refresh_token2",
     );
 
     await act(() => sleep(12000));

@@ -5,7 +5,8 @@ import { Logger } from "../utils/Log";
 import { Timer } from "../utils/Timer";
 
 /**
- * Holds claims represented by a combination of the `id_token` and the user info endpoint.
+ * Holds claims represented by a combination of the `id_token` and the user info
+ * endpoint.
  *
  * @public
  * @see https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims
@@ -39,7 +40,8 @@ export interface UserProfile {
   /**
    * Middle name(s) of the End-User. Note that in some cultures, people can have
    * multiple middle names; all can be present, with the names being separated
-   * by space characters. Also note that in some cultures, middle names are not used.
+   * by space characters. Also note that in some cultures, middle names are not
+   * used.
    */
   middle_name?: string;
   /**
@@ -83,12 +85,14 @@ export interface UserProfile {
    * steps to ensure that this e-mail address was controlled by the End-User at
    * the time the verification was performed. The means by which an e-mail
    * address is verified is context-specific, and dependent upon the trust
-   * framework or contractual agreements within which the parties are operating.
+   * framework or contractual agreements within which the parties are
+   * operating.
    */
   email_verified?: boolean;
   /**
    * End-User's gender. Values defined by this specification are female and
-   * male. Other values MAY be used when neither of the defined values are applicable.
+   * male. Other values MAY be used when neither of the defined values are
+   * applicable.
    */
   gender?: string;
   /**
@@ -135,7 +139,8 @@ export interface UserProfile {
   phone_number_verified?: boolean;
   /**
    * End-User's preferred postal address. The value of the address member is a
-   * JSON structure containing some or all of the members defined in the standard.
+   * JSON structure containing some or all of the members defined in the
+   * standard.
    *
    * @see https://openid.net/specs/openid-connect-core-1_0.html#AddressClaim
    */
@@ -181,7 +186,10 @@ export class User {
   /** The scopes that the requested access token is valid for. */
   public scope?: string;
 
-  /** The claims represented by a combination of the `id_token` and the user info endpoint. */
+  /**
+   * The claims represented by a combination of the `id_token` and the user info
+   * endpoint.
+   */
   public profile: UserProfile;
 
   /** The expires at returned from the OIDC provider. */

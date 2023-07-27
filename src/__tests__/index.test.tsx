@@ -58,7 +58,7 @@ describe("useAuth", () => {
     component = render(
       <UserManagerContext.Provider>
         <TextInputTester />
-      </UserManagerContext.Provider>
+      </UserManagerContext.Provider>,
     );
 
     await act(() => sleep(2000));

@@ -35,7 +35,10 @@ export class UserManager {
     return this._events;
   }
 
-  /** Returns promise to load the `User` object for the currently authenticated user. */
+  /**
+   * Returns promise to load the `User` object for the currently authenticated
+   * user.
+   */
   public async getUser(): Promise<User | null> {
     const user = await this._loadUser();
     if (user) {
@@ -48,7 +51,10 @@ export class UserManager {
     return null;
   }
 
-  /** Returns promise to remove from any storage the currently authenticated user. */
+  /**
+   * Returns promise to remove from any storage the currently authenticated
+   * user.
+   */
   public async removeUser(): Promise<void> {
     await this.storeUser(null);
     this._logger.info("removeUser: user removed from storage");
@@ -87,7 +93,7 @@ export class UserManager {
           }
         } else if (!event.key) {
           this._logger.debug(
-            "User removed because storage event listener (clear storage)"
+            "User removed because storage event listener (clear storage)",
           );
 
           await this.settings.userStore.remove(this._userStoreKey);

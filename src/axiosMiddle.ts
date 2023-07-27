@@ -19,7 +19,7 @@ function createAxiosMiddle({
 }) {
   function axiosMiddle(
     axiosInstance: AxiosInstance,
-    isRefreshTokenRequest: (error: AxiosRequestConfig) => boolean
+    isRefreshTokenRequest: (error: AxiosRequestConfig) => boolean,
   ) {
     // Response interceptor
     axiosInstance.interceptors.response.use(
@@ -53,7 +53,7 @@ function createAxiosMiddle({
         }
 
         return Promise.reject(error);
-      }
+      },
     );
 
     // ًًRequest interceptor
@@ -85,7 +85,7 @@ function createAxiosMiddle({
       (error) => {
         // Do something with request error
         return Promise.reject(error);
-      }
+      },
     );
 
     return axiosInstance;
