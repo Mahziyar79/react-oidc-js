@@ -38,10 +38,13 @@ export const handleSetUserData = async (
   });
 
   if (!userConfig) {
+    console.log("if statement", {userConfig});
     return;
   }
 
   await userManager.storeUser(userConfig);
+
+  console.log({userConfig});
 
   return userConfig;
 };

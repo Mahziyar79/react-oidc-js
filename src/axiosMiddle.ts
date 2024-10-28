@@ -67,13 +67,20 @@ function createAxiosMiddle({
         ) {
           let user;
           if (isRefreshTokenRequest(requestConfig)) {
+            console.log("isRefreshTokenRequest(requestConfig)");
+
             user = await getUser();
           } else {
+            console.log("user = await getUserWaitRefresh()");
+
             user = await getUserWaitRefresh();
           }
 
+          console.log("user?.access_token");
+
           if (user?.access_token) {
             if (!requestConfig?.headers) {
+              console.log("!requestConfig?.headers");
               requestConfig.headers = {};
             }
             requestConfig.headers.authorization = `bearer ${user?.access_token}`;
